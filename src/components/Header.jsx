@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Users, Radio, Cpu, Plus, HeartPulse } from 'lucide-react';
+import { Activity, Users, Radio, Plus, HeartPulse } from 'lucide-react';
 
 export default function Header({ activeTab, setActiveTab, onOpenAddPatient, activePatient }) {
   return (
@@ -76,18 +76,6 @@ export default function Header({ activeTab, setActiveTab, onOpenAddPatient, acti
             <Radio className="w-4 h-4 animate-pulse text-red-400" />
             <span>المراقبة الحية (Live Monitor)</span>
             <span className="w-2 h-2 rounded-full bg-red-400 animate-ping absolute top-1.5 left-1.5" />
-          </button>
-
-          <button
-            onClick={() => setActiveTab('arduino')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-cairo font-bold transition-all ${
-              activeTab === 'arduino'
-                ? 'bg-white text-[#001e40] shadow-md'
-                : 'text-blue-100 hover:bg-white/10'
-            }`}
-          >
-            <Cpu className="w-4 h-4 text-cyan-300" />
-            <span>ربط الأردوينو & SQL</span>
           </button>
         </div>
       </div>

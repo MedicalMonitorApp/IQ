@@ -4,11 +4,10 @@ import AddPatientModal from './components/AddPatientModal';
 import PatientsScreen from './screens/PatientsScreen';
 import PatientProfileScreen from './screens/PatientProfileScreen';
 import LiveMonitorScreen from './screens/LiveMonitorScreen';
-import ArduinoHubScreen from './screens/ArduinoHubScreen';
 import { fetchAllPatients } from './utils/patientStorage';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('patients'); // 'patients' | 'live' | 'arduino'
+  const [activeTab, setActiveTab] = useState('patients'); // 'patients' | 'live'
   const [patients, setPatients] = useState([]);
   const [activePatient, setActivePatient] = useState(null);
   const [selectedProfilePatient, setSelectedProfilePatient] = useState(null);
@@ -96,10 +95,6 @@ export default function App() {
                 onSelectPatient={(p) => setActivePatient(p)}
                 onExaminationSaved={handleExaminationSaved}
               />
-            )}
-
-            {activeTab === 'arduino' && (
-              <ArduinoHubScreen />
             )}
           </>
         )}
